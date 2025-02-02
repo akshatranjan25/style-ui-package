@@ -135,5 +135,5 @@ style-ui-package/
 
 ## Contact
 📧 Email: ranjanaksh25@gmail.com  
-🔗 LinkedIn: [Your Profile](https://www.linkedin.com/in/akshatranjan25)
+🔗 LinkedIn: [akshatranjan25](https://www.linkedin.com/in/akshatranjan25)
 
