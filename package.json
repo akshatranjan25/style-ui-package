@@ -1,27 +1,28 @@
 {
   "name": "style-ui-package",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/react-loadscreen-ui.umd.cjs",
-  "module": "./dist/react-loadscreen-ui.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/style-ui-package.umd.cjs",
+  "module": "./dist/style-ui-package.js",
+  "types": "./dist/style-ui-package.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/react-loadscreen-ui.js",
-      "require": "./dist/react-loadscreen-ui.umd.cjs"
+      "import": "./dist/style-ui-package.js",
+      "require": "./dist/style-ui-package.umd.cjs"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/style-ui-package.css"
   },
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
+    "prebuild": "if exist dist rmdir /s /q dist",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",

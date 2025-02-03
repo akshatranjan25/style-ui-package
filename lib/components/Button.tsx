@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 interface Props {
   border?: string;
@@ -13,7 +14,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({
   border = "2px solid transparent",
-  color = "bg-blue-500",
+  color = "bg-white-300",
   children,
   height = "auto",
   width = "auto",
@@ -24,7 +25,7 @@ const Button: React.FC<Props> = ({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 text-white ${color} ${radius} border ${className} transition duration-300 ease-in-out hover:brightness-90 focus:outline-none`}
+      className={`px-4 py-2 ${color} ${radius} border ${className} transition duration-300 ease-in-out hover:brightness-90 focus:outline-none`}
       style={{ height, width, border }}
     >
       {children}

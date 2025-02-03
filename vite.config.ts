@@ -1,9 +1,9 @@
 // vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tsconfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import dts from 'vite-plugin-dts'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
@@ -11,21 +11,23 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
+    tsconfigPaths(),
+    
     // postcss()
   ],
   build: {
     lib: {
       entry: 'lib/main.ts',
-      name: 'react-loadscreen-ui',
-      fileName: 'react-loadscreen-ui'
+      name: 'style-ui-package',
+      fileName: 'style-ui-package'
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/tsx-runtime'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'reactDOM',
-          'react/jsx-runtime': 'react/jsx-runtime'
+          'react/tsx-runtime': 'react/tsx-runtime'
         }
       }
     }

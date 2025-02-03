@@ -1,4 +1,21 @@
 {
+  "compilerOptions": {
+    "module": "ESNext", 
+    "target": "ESNext",
+    "outDir": "./dist", // Output directory for compiled JS files
+    "esModuleInterop": true,
+    "moduleResolution": "node", 
+    "strict": true, 
+    "declaration": true, // This tells TypeScript to generate .d.ts declaration files
+    "declarationDir": "./dist", // Directory to place the generated declaration files
+    "allowSyntheticDefaultImports": true,  // Allow default imports from modules without a default export
+    "jsx": "react",  // Enable JSX handling for .tsx files
+    "baseUrl": ".", 
+    "paths": {
+      "@/*": ["lib/*"],
+      "@/components/*": ["lib/components/*"]
+    }
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC } from "react";
+import React from 'react'; // Import React explicitly
 
 interface InputProps {
   type: "text" | "number" | "email" | "password";
@@ -9,10 +9,10 @@ interface InputProps {
   error?: boolean;
   disabled?: boolean;
   className?: string; // Allows custom Tailwind classes
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Using React for type
 }
 
-const Input: FC<InputProps> = ({
+const Input = ({
   type,
   label,
   value,
@@ -22,9 +22,9 @@ const Input: FC<InputProps> = ({
   disabled,
   className = "",
   onChange,
-}) => {
+}: InputProps) => {
   return (
-    <div className="flex flex-col space-y-1">
+    <>
       <label htmlFor={name} className="text-sm font-medium text-gray-700">
         {label}
       </label>
@@ -41,7 +41,7 @@ const Input: FC<InputProps> = ({
         } ${disabled ? "bg-gray-100 cursor-not-allowed" : "bg-white"} ${className}`}
       />
       {error && <p className="text-red-600 text-sm">Input field can't be empty!</p>}
-    </div>
+    </>
   );
 };
 
