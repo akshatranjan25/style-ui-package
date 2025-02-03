@@ -16,7 +16,7 @@ To install the package, use npm:
 npm install style-ui-package
 ```
 
-Visit the website for any issues - 
+Visit the website for any issues - [https://www.npmjs.com/package/style-ui-package](https://www.npmjs.com/package/style-ui-package)
 
 ## Usage
 Import the required components into your React project and use them seamlessly.
